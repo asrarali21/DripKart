@@ -17,7 +17,8 @@ function Navbar() {
         <NavLink to='/Shop'>shop</NavLink>
         </div>
         <NavLink to='/Cart'>
-        <FontAwesomeIcon icon={faShoppingCart}  className="cart-icon"  />
+         <FontAwesomeIcon icon={faShoppingCart} value="1" className="cart-icon"  />
+        
           </NavLink>
        
     </div>
