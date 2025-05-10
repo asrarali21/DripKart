@@ -28,4 +28,4 @@ It features a clean UI, product listing via API, and responsive design.
 
 
 ![DripKart Screenshot](./assets/screenshot.png)
-![DripKart Screenshot](./assets/screenshot.png)
+
