@@ -27,5 +27,5 @@ It features a clean UI, product listing via API, and responsive design.
 - Netlify (for deployment)
 
 
-![DripKart Screenshot](/screenshot.png)
-![DripKart Screenshot](/screenshot2.png)
+![DripKart Screenshot](./assets/screenshot.png)
+![DripKart Screenshot](./assets/screenshot.png)
