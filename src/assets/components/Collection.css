@@ -1,0 +1,134 @@
+.collection-page {
+    padding: 2rem 0;
+}
+
+.collection-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.collection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    border-radius: 2px;
+}
+
+.collection-nav-button {
+    margin: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.collection-nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.collection-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.collection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+}
+
+.collection-card p {
+    margin: 0.5rem 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.collection-card-title {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+    height: 2.8em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.collection-card-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FF6B6B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collection-title {
+        font-size: 2rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .collection-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .collection-title {
+        font-size: 1.8rem;
+    }
+
+    .collection-nav-button {
+        margin: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+} 

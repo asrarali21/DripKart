@@ -43,7 +43,8 @@
     z-index: 2;
     width: 90%;
     max-width: 1200px;
-    animation: fadeInUp 1s ease-out;
+    opacity: 0;
+    animation: contentFadeIn 1s ease-out forwards;
 }
 
 .main-heading {
@@ -121,12 +122,12 @@
 }
 
 /* Animations */
-@keyframes fadeInUp {
-    from {
+@keyframes contentFadeIn {
+    0% {
         opacity: 0;
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, -45%);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
@@ -180,5 +181,175 @@
 .main-heading-container:hover .background-video {
     filter: brightness(0.8) contrast(1.2);
     transform: translate(-50%, -50%) scale(1.05);
+}
+
+.categories-section {
+    padding: 2rem 0;
+    background: #f8f9fa;
+    position: relative;
+    z-index: 2;
+}
+
+.category-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.category-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    border-radius: 2px;
+    animation: widthGrow 1s ease-out forwards;
+}
+
+.homeSections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.homeSections > div {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.homeSections > div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.homeSections > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.homeSections > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.homeSections > div:hover img {
+    transform: scale(1.1);
+}
+
+.homeSections > div:hover::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+}
+
+.homeSections h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.homeSections > div:hover h2 {
+    transform: translate(-50%, -50%) scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Remove the previous background gradients since we're using images now */
+.homeSections > div:nth-child(1),
+.homeSections > div:nth-child(2),
+.homeSections > div:nth-child(3),
+.homeSections > div:nth-child(4) {
+    background: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .homeSections {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .homeSections > div {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-heading {
+        font-size: 2.5rem;
+    }
+
+    .homeSections {
+        grid-template-columns: 1fr;
+    }
+
+    .homeSections h2 {
+        font-size: 1.8rem;
+    }
+    
+    .homeSections > div {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-heading {
+        font-size: 2rem;
+    }
+
+    .homeSections {
+        padding: 1rem;
+    }
+
+    .homeSections h2 {
+        font-size: 1.6rem;
+    }
+    
+    .homeSections > div {
+        height: 180px;
+    }
 }
  

@@ -32,10 +32,10 @@ function Shop() {
   return (
     <>
     <div className="shopnav-container"> 
-  <NavLink to="/mencollection">Mens Collection</NavLink>
-  <NavLink to="/Jewellery">Jewellery</NavLink>
-  <NavLink to="/womencollection">Women Collection</NavLink>
-  <NavLink to="/electronic">Electronic Section</NavLink>
+  <NavLink to="/mencollection"  state={{mydata :Storedata }}>Mens Collection</NavLink>
+  <NavLink to="/Jewellery" state={{mydata :Storedata }}>Jewellery</NavLink>
+  <NavLink to="/womencollection" state={{mydata :Storedata }}>Women Collection</NavLink>
+  <NavLink to="/electronic" state={{mydata :Storedata }}>Electronic Section</NavLink>
     </div>
       <h1 className='All-product-heading'>All Product</h1>
     <div className='cart-data'>
@@ -48,9 +48,6 @@ function Shop() {
         </div>
       )
     })}
-
-    
-    
     </div>
     </>
   )

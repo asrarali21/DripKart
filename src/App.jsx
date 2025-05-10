@@ -18,7 +18,6 @@ const router = createBrowserRouter([
       element: <div>
       <Navbar/>
       <Home/>
-      
       </div>
   },
  {
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
   path:"/mencollection",
   element: <div>
     <Navbar/>
-   <MensCollection />
+   <MensCollection/>
     </div>
  },
  {
