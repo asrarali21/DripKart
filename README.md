@@ -7,7 +7,7 @@ It features a clean UI, product listing via API, and responsive design.
 
 ## 🌐 Live Demo
 
-👉 [DripKart](https://your-netlify-link.netlify.app)
+👉 [DripKart](https://dripkarts.netlify.app/)
 
 
 ## 🚀 Features
@@ -27,4 +27,5 @@ It features a clean UI, product listing via API, and responsive design.
 - Netlify (for deployment)
 
 
-
+![DripKart Screenshot](/screenshot.png)
+![DripKart Screenshot](/screenshot2.png)
