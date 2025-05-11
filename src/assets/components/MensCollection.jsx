@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import {  useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import './Collection.css'
+import { StoreContext } from './StoreProvider';
 
 function MensCollection() {
-  const location = useLocation();
-  const data = location.state?.mydata || []
+  
+  const {storeData} =useContext(StoreContext)
+
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const menClothes = data.filter((item) => item.category === "men's clothing")
+  const menClothes = storeData.filter((item) => item.category === "men's clothing")
 
   function handleclick(id) {
     navigate(`/description/${id}`)

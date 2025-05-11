@@ -11,75 +11,83 @@ import MensCollection from './assets/components/MensCollection';
 import Jewellery from './assets/components/Jewellery';
 import WomensCollection from './assets/components/WomensCollection';
 import Electronics from './assets/components/Electronics';
-
+import SharedLayout from './assets/components/SharedLayout';
+import StoreProvider from './assets/components/StoreProvider';
 const router = createBrowserRouter([
   {
-      path:"/",
-      element: <div>
-      <Navbar/>
-      <Home/>
+    path: '/',
+    element: (
+      <div>
+        <Navbar />
+        <Home />
       </div>
+    ),
   },
- {
-  path:"/shop",
-  element: <div>
-    <Navbar/>
-    <Shop/>
-    </div>
-
- },
- {
-  path:"/cart",
-  element: <div>
-    <Navbar/>
-    <Cart/>
-    </div>
- },
- {
-  path:"/description/:id",
-  element: <div>
-    <Navbar/>
-   <Description />
-    </div>
- },
- {
-  path:"/mencollection",
-  element: <div>
-    <Navbar/>
-   <MensCollection/>
-    </div>
- },
- {
-  path:"/jewellery",
-  element: <div>
-    <Navbar/>
-    <Jewellery/>
-    </div>
- },
- {
-  path:"/womencollection",
-  element: <div>
-    <Navbar/>
-    <WomensCollection/>
-    </div>
- },
- {
-  path:"/electronic",
-  element: <div>
-    <Navbar/>
-    <Electronics/>
-    </div>
- },
- 
- 
-])
+  {
+    path: '/shop',
+    element: (
+      <div>
+        <Navbar />
+        <Shop />
+      </div>
+    ),
+  },
+  {
+    path: '/cart',
+    element: (
+      <div>
+        <Navbar />
+        <Cart />
+      </div>
+    ),
+  },
+  {
+    path: '/description/:id',
+    element: (
+      <div>
+        <Navbar />
+        <Description />
+      </div>
+    ),
+  },
+  {
+    path: '/',
+    element: (
+      <div>
+        <Navbar />
+        <SharedLayout />
+      </div>
+    ),
+    children: [
+      {
+        path: '/mencollection',
+        element: <MensCollection />,
+      },
+      {
+        path: '/jewellery',
+        element: <Jewellery />,
+      },
+      {
+        path: '/womencollection',
+        element: <WomensCollection />,
+      },
+      {
+        path: '/electronic',
+        element: <Electronics />,
+      },
+    ],
+  },
+]);
 
 
 function App() {
     
   return (
   <>
-    <RouterProvider router={router}/>
+  
+     <StoreProvider>
+      <RouterProvider router={router} />
+    </StoreProvider>
   </>
   )
 }
