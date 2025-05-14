@@ -263,3 +263,60 @@
     font-size: 0.9rem;
   }
 }
+
+/* Search Input Styling */
+.search-input {
+    width: 80%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    margin: 2rem auto;
+    display: block;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4ECDC4;
+    box-shadow: 0 4px 20px rgba(78, 205, 196, 0.2);
+    transform: translateY(-2px);
+}
+
+.search-input::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* Product Not Found Message */
+.product-not-found {
+    text-align: center;
+    font-size: 2rem;
+    color: #FF6B6B;
+    margin: 3rem 0;
+    font-family: 'Poppins', sans-serif;
+    animation: shake 0.5s ease-in-out;
+    position: relative;
+}
+
+.product-not-found::before {
+    content: '🔍';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
