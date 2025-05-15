@@ -55,6 +55,7 @@ function Shop() {
        placeholder='Search products here'
        onChange={(e)=>setproductname(e.target.value)}
        />
+      
       <h1 className='All-product-heading'>All Product</h1>
       { FilterProduct.length === 0 ? <h3 className='product-not-found'>Product Not Found</h3> : null }
     <div className='cart-data'>

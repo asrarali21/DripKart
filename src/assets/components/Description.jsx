@@ -1,10 +1,14 @@
 import React, { useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "./Description.css"
+import { useContext } from 'react'
+import { CartContext } from './CardContext'
 
 function Description() {
       const {id} = useParams()
       const [product, setproduct] = useState(null)
+      const {addToCart} = useContext(CartContext)
+     
 
       
       const fetchproduct = async ()=>{
@@ -42,7 +46,8 @@ function Description() {
       <p>
         <span>Category:</span> {product.category}
       </p>
-      <button>Add to Cart</button>
+      <button onClick={()=>addToCart(product)} >Add to Cart</button>
+      
     </div>
   </div>
   )

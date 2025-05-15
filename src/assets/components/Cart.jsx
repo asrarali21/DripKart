@@ -1,15 +1,23 @@
 import React from 'react'
 import './Cart.css'
+import { useContext } from 'react'
+import { CartContext } from './CardContext'
 
 function Cart() {
+       const {cart} = useContext(CartContext)
   return (
-    <div className="coming-soon-container">
-      <h1 className="coming-soon-text">Coming Soon</h1>
-      <div className="coming-soon-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <div>
+      <h2>Your Cart</h2>
+      {cart.length === 0 ? (
+        <p>Cart is empty.</p>
+      ) : (
+        cart.map((item, idx) => (
+          <li>
+          <img src={item.image} alt="" />
+          <button>Remove from Cart</button>
+          </li>
+        ))
+      )}
     </div>
   )
 }

@@ -13,6 +13,7 @@ import WomensCollection from './assets/components/WomensCollection';
 import Electronics from './assets/components/Electronics';
 import SharedLayout from './assets/components/SharedLayout';
 import StoreProvider from './assets/components/StoreProvider';
+import { CartProvider } from './assets/components/CardContext'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -84,10 +85,11 @@ function App() {
     
   return (
   <>
-  
+    <CartProvider>
      <StoreProvider>
       <RouterProvider router={router} />
     </StoreProvider>
+  </CartProvider>
   </>
   )
 }
