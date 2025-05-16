@@ -21,7 +21,7 @@ function Navbar({count}) {
         <NavLink to='/Cart'>
          <FontAwesomeIcon icon={faShoppingCart} value="1" className="cart-icon"  /> 
             <div className="cart-count">
-        Cart: {count}
+   
       </div>
           </NavLink>
     </div>
